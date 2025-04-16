@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "smoothui",
+	"version": "${version}",
+	"name": "Smooth UI",
+	"description": "Makes your UI look nicer by adding smooth animations.",
+	"authors": ["RareHyperIon"],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/RareHyperIonYT/SmoothUI"
+	},
+	"license": "MIT",
+	"icon": "assets/smoothui/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["me.rarehyperion.smoothui.SmoothUI"],
+		"fabric-datagen": ["me.rarehyperion.smoothui.SmoothUIDataGenerator"]
+	},
+	"mixins": ["smoothui.mixins.json"],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
