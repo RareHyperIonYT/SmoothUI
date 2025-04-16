@@ -1,20 +1,14 @@
 # Smooth UI
 
----
-
 Smooth UI is a clean Fabric mod for that elevates your game interface with beautifully smooth animations. Enjoy a dynamic experience every time you interact with your hotbar, open a GUI, or scroll through your menus.
 
 ## Features
-
----
 
 - **Animated Hotbar Selector:** Experience flawless, smooth transitions when selecting items on your hotbar.
 - **Sleek GUI Animations:** Watch as your in-game menus gracefully animate open and close.
 - **Smooth Scrolling:** Navigate through lists and menus with elegantly fluid scrolling motion.
 
 ## Preview
-
----
 
 <p float="left">
     <img src="hotbar.gif" width="500" alt="Hotbar Scrolling"/>
