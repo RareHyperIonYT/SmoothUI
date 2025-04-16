@@ -1,4 +1,4 @@
-package me.rarehyperion.smoothui.mixin;
+package me.rarehyperion.smoothui.mixin.scroll;
 
 import me.rarehyperion.smoothui.utility.EasingFunctions;
 import net.minecraft.client.gui.DrawContext;

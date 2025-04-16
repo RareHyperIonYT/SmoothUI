@@ -1,4 +1,4 @@
-package me.rarehyperion.smoothui.mixin;
+package me.rarehyperion.smoothui.mixin.inventory;
 
 import me.rarehyperion.smoothui.utility.ClientUtility;
 import me.rarehyperion.smoothui.utility.GuiAnimations;
