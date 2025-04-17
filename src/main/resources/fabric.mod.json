@@ -6,7 +6,6 @@
 	"description": "Makes your UI look nicer by adding smooth animations.",
 	"authors": ["RareHyperIon"],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/RareHyperIonYT/SmoothUI"
 	},
 	"license": "MIT",
