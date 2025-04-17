@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntryListWidget.class)
 public abstract class ScrollableWidgetMixin {
 
-    @Unique private static final double SCROLL_SPEED = 0.5D;
+    @Unique private static final double SCROLL_SPEED = 1.0D;
     @Unique private static final double DURATION = 1.0D;
 
     @Unique private double animationTimer = 0;
