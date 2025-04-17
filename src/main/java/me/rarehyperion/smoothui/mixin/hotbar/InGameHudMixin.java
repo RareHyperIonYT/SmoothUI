@@ -1,5 +1,6 @@
 package me.rarehyperion.smoothui.mixin.hotbar;
 
+import me.rarehyperion.smoothui.SmoothUI;
 import me.rarehyperion.smoothui.utility.EasingFunctions;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -20,7 +21,6 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 public abstract class InGameHudMixin {
 
     @Unique private float currentX = -1;
-    @Unique private long lastTickTime = 0;
 
     @Inject(method = "renderHotbar", at = @At("HEAD"))
     private void onRenderHotbar(final DrawContext context, final RenderTickCounter counter, final CallbackInfo callback) {
@@ -30,9 +30,8 @@ public abstract class InGameHudMixin {
             final float targetX = player.getInventory().selectedSlot * 20;
             if(this.currentX == -1) this.currentX = targetX;
 
-            final long currentTime = System.currentTimeMillis();
-            final float deltaTime = (currentTime - this.lastTickTime) / 1000.0F;
-            this.lastTickTime = currentTime;
+            final float deltaTicks = counter.getLastFrameDuration();
+            final float deltaTime = Math.min(deltaTicks / 20.0F, 0.033F);
 
             if (Math.abs(targetX - this.currentX) > 0.1F) {
                 this.currentX = EasingFunctions.easeLinearDamped(this.currentX, targetX, deltaTime, 25.0F);
