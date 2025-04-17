@@ -13,8 +13,7 @@
 	"icon": "assets/smoothui/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": ["me.rarehyperion.smoothui.SmoothUI"],
-		"fabric-datagen": ["me.rarehyperion.smoothui.SmoothUIDataGenerator"]
+		"main": ["me.rarehyperion.smoothui.SmoothUI"]
 	},
 	"mixins": ["smoothui.mixins.json"],
 	"depends": {
