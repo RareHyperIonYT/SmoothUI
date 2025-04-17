@@ -10,7 +10,13 @@ Smooth UI is a clean Fabric mod for that elevates your game interface with beaut
 
 ## Preview
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cJ66mDInivY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p float="left">
+    <img src="hotbar.gif" width="500" alt="Hotbar Scrolling"/>
+    <br>
+    <img src="container.gif" width="500" alt="Container Opening"/>
+    <br>
+    <img src="scroll.gif" width="500" alt="Scrolling"/>
+</p>
 
 ---
 
