@@ -1,5 +1,6 @@
 package me.rarehyperion.smoothui.mixin.scroll;
 
+import me.rarehyperion.smoothui.Config;
 import me.rarehyperion.smoothui.utility.EasingFunctions;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.EntryListWidget;
@@ -14,9 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntryListWidget.class)
 public abstract class ScrollableWidgetMixin {
-
-    @Unique private static final double SCROLL_SPEED = 1.0D;
-    @Unique private static final double DURATION = 1.0D;
 
     @Unique private double animationTimer = 0;
     @Unique private double scrollStartVelocity = 0;
@@ -43,7 +41,7 @@ public abstract class ScrollableWidgetMixin {
 
         double difference = amount - this.scrollAmount;
         difference = Math.signum(difference) * Math.min(Math.abs(difference), 10);
-        difference *= SCROLL_SPEED;
+        difference *= Config.SCROLL_SPEED;
 
         if(Math.signum(difference) != Math.signum(this.scrollStartVelocity)) difference *= 2.5D;
 
@@ -78,7 +76,7 @@ public abstract class ScrollableWidgetMixin {
     @Unique
     private void updateScrollAmount(float delta) {
         this.scrollAmount += this.computeVelocity(this.animationTimer, this.scrollStartVelocity) * delta;
-        this.animationTimer += delta * 10 / DURATION;
+        this.animationTimer += delta * 10 / Config.DURATION;
     }
 
     @Unique
