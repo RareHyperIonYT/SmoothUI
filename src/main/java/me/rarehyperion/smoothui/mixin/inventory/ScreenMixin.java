@@ -15,25 +15,37 @@ public class ScreenMixin {
     @Inject(method = "render", at = @At("HEAD"))
     private void onRender(final DrawContext context, final int mouseX, final int mouseY, final float delta, final CallbackInfo callback) {
         if (ClientUtility.isNotInGame()) return;
-        context.getMatrices().translate(0.0D, GuiAnimations.getOffsetY(), 0.0D);
+        context.getMatrices().translate(0.0F, GuiAnimations.getOffsetY());
     }
 
     @Inject(method = "render", at = @At("TAIL"))
     private void onRenderEnd(final DrawContext context, final int mouseX, final int mouseY, final float delta, final CallbackInfo callback) {
         if (ClientUtility.isNotInGame()) return;
-        context.getMatrices().translate(0.0D, -GuiAnimations.getOffsetY(), 0.0D);
+        context.getMatrices().translate(0.0F, -GuiAnimations.getOffsetY());
     }
 
     @Inject(method = "renderBackground", at = @At("HEAD"))
     private void onRenderBackground(final DrawContext context, final int mouseX, final int mouseY, final float delta, final CallbackInfo callback) {
         if (ClientUtility.isNotInGame()) return;
-        context.getMatrices().translate(0.0D, -GuiAnimations.getOffsetY(), 0.0D);
+        context.getMatrices().translate(0.0F, -GuiAnimations.getOffsetY());
     }
 
     @Inject(method = "renderBackground", at = @At("TAIL"))
     private void onRenderBackgroundEnd(final DrawContext context, final int mouseX, final int mouseY, final float delta, final CallbackInfo callback) {
         if (ClientUtility.isNotInGame()) return;
-        context.getMatrices().translate(0.0D, GuiAnimations.getOffsetY(), 0.0D);
+        context.getMatrices().translate(0.0F, GuiAnimations.getOffsetY());
+    }
+
+    @Inject(method = "renderWithTooltip", at = @At("HEAD"))
+    private void onRenderWithTooltip(final DrawContext context, final int mouseX, final int mouseY, final float delta, final CallbackInfo callback) {
+        if (ClientUtility.isNotInGame()) return;
+        context.getMatrices().translate(0.0F, GuiAnimations.getOffsetY());
+    }
+
+    @Inject(method = "renderWithTooltip", at = @At("TAIL"))
+    private void onRenderWithTooltipEnd(final DrawContext context, final int mouseX, final int mouseY, final float delta, final CallbackInfo callback) {
+        if (ClientUtility.isNotInGame()) return;
+        context.getMatrices().translate(0.0F, -GuiAnimations.getOffsetY());
     }
 
     @Inject(method = "onDisplayed", at = @At("HEAD"))

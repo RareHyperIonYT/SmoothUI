@@ -23,7 +23,7 @@ public class TexturedButtonMixin {
         if (ClientUtility.isNotInGame()) return;
 
         if (this.textures == RecipeBookWidget.BUTTON_TEXTURES) {
-            context.getMatrices().translate(0.0, -GuiAnimations.getOffsetY(), 0.0);
+            context.getMatrices().translate(0.0F, -GuiAnimations.getOffsetY());
         }
     }
 
@@ -32,7 +32,7 @@ public class TexturedButtonMixin {
         if (ClientUtility.isNotInGame()) return;
 
         if (this.textures == RecipeBookWidget.BUTTON_TEXTURES) {
-            context.getMatrices().translate(0.0, GuiAnimations.getOffsetY(), 0.0);
+            context.getMatrices().translate(0.0F, GuiAnimations.getOffsetY());
         }
     }
 

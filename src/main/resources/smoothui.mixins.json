@@ -8,10 +8,10 @@
     "defaultRequire": 1
   },
   "client": [
-    "inventory.HandledScreenMixin",
     "hotbar.InGameHudMixin",
+    "inventory.HandledScreenMixin",
     "inventory.ScreenMixin",
-    "scroll.ScrollableWidgetMixin",
-    "inventory.TexturedButtonMixin"
+    "inventory.TexturedButtonMixin",
+    "scroll.ScrollableWidgetMixin"
   ]
 }

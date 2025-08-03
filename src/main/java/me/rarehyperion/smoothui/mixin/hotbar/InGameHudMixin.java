@@ -27,10 +27,10 @@ public abstract class InGameHudMixin {
         final PlayerEntity player = this.getCameraPlayer();
 
         if (player != null) {
-            final float targetX = player.getInventory().selectedSlot * 20;
+            final float targetX = player.getInventory().getSelectedSlot() * 20;
             if(this.currentX == -1) this.currentX = targetX;
 
-            final float deltaTicks = counter.getLastFrameDuration();
+            final float deltaTicks = counter.getFixedDeltaTicks();
             final float deltaTime = Math.min(deltaTicks / 20.0F, 0.033F);
 
             if (Math.abs(targetX - this.currentX) > 0.1F) {
@@ -39,10 +39,17 @@ public abstract class InGameHudMixin {
         }
     }
 
-    @ModifyArgs(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lnet/minecraft/util/Identifier;IIII)V", ordinal = 1))
+    @ModifyArgs(
+            method = "renderHotbar",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/util/Identifier;IIII)V",
+                    ordinal = 1
+            )
+    )
     private void mod(Args args) {
         int baseX = (MinecraftClient.getInstance().getWindow().getScaledWidth() / 2) - 92;
-        args.set(1, Math.round(baseX + this.currentX));
+        args.set(2, Math.round(baseX + this.currentX));
     }
 
     @Shadow @Nullable protected abstract PlayerEntity getCameraPlayer();
